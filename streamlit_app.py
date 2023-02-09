@@ -40,15 +40,6 @@ try:
     #streamlit.write('The user entered ', fruit_choice)
 except URLError as e:
   streamlit.error()
-  
-
-
-my_cur=my_cnx.cursor()
-#my_cur.execute("SELECT CURRENT_USER(),CURRENT_ACCOUNT(),CURRENT_REGION()")
-my_cur.execute("select * from fruit_load_list")
-#my_data_row=my_cur.fetchone()
-my_data_rows=my_cur.fetchall()
-streamlit.header("Fruit load list contains:")
 
 def get_fruit_list():
   with my_cnx.cursor() as my_cur:
